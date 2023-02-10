@@ -1,0 +1,15 @@
+.card {
+    max-width: 282px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .card {
+       
+    }
+}
