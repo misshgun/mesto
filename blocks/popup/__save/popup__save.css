@@ -12,9 +12,11 @@
     color: #FFFFFF;
     padding: 0;
     border: 0;
+    border-radius: 2px;
     box-sizing: border-box;
     align-self: center;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .popup__save:hover {
@@ -25,5 +27,7 @@
     .popup__save {
         max-width: 238px;
         min-height: 46px;
+        font-size: 14px;
+        line-height: 17px;
     }
 }
