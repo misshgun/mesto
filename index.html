@@ -23,7 +23,7 @@
                     <p class="profile__about">Исследователь океана</p>
                 </div>
             </div> 
-            <button class="profile__add-button"><img src="images/add.svg" alt="кнопка добавления" class="profile__add-img"></button>
+            <button class="profile__add-button" type="button"><img src="images/add.svg" alt="кнопка добавления" class="profile__add-img"></button>
         </section>
         <section class="cards">
             <article class="card">
@@ -79,8 +79,8 @@
                 <form class="popup__form" name="aboutme">
                     <fieldset class="popup__fieldset">
                         <h2 class="popup__title">Редактировать профиль</h2>
-                        <input type="text" class="popup__input-name" name="fullname" required value="">
-                        <input type="text" class="popup__input-job" name="info" required value="">
+                        <input type="text" class="popup__input popup__input_type_name" name="fullname" required value="">
+                        <input type="text" class="popup__input popup__input_type_job" name="info" required value="">
                         <button class="popup__save" type="submit">Сохранить</button>
                     </fieldset>
                 </form>

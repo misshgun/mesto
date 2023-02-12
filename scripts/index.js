@@ -3,9 +3,9 @@ let popupOpen = document.querySelector('.profile__about-button');
 let popupClose = document.querySelector('.popup__close');
 let profileName = document.querySelector('.profile__name');
 let profileAbout = document.querySelector('.profile__about');
-let popupContainer = document.querySelector('.popup__container'); // я так и не понял зачем мне переименнововать.
-let nameInput = document.querySelector('.popup__input-name');
-let jobInput = document.querySelector('.popup__input-job');
+let popupForm = document.querySelector('.popup__form');
+let nameInput = document.querySelector('.popup__input_type_name');
+let jobInput = document.querySelector('.popup__input_type_job');
 
 function handlePopupOpen(){
     popup.classList.add('popup_opened');
@@ -29,4 +29,4 @@ function handleFormSubmit (evt) {
 
 popupOpen.addEventListener('click', handlePopupOpen);
 popupClose.addEventListener('click', handlePopupClose);
-popupContainer.addEventListener('submit', handleFormSubmit);
+popupForm.addEventListener('submit', handleFormSubmit);
