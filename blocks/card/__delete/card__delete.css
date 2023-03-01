@@ -16,5 +16,6 @@
 }
 
 .card__delete:hover {
-    transform: scale(1.3);opacity: 0.6;
+    transform: scale(1.3);
+    opacity: 0.6;
 }
