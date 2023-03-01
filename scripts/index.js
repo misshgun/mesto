@@ -10,7 +10,7 @@ let jobInput = document.querySelector('.popup__input_type_job');
 let popupAddBtn = document.querySelector('.profile__add-button');
 let popupCloseAdd = document.querySelector('.popup__add-close');
 let cardsContainer = document.querySelector('.cards');
-let popupWindowClose = document.querySelector('.popup__window_close');
+let popupWindowClose = document.querySelector('.popup__window-close');
 
 
 //Массив с карточками
