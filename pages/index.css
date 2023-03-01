@@ -28,13 +28,20 @@
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/_window/popup_window.css);
+@import url(../blocks/popup/__window-info/popup__window-info.css);
+@import url(../blocks/popup/__window-image/popup__window-image.css);
 
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__img/card__img.css);
 @import url(../blocks/card/__title/card__title.css);
 @import url(../blocks/card/__info/card__info.css);
-@import url(../blocks/card/__button/card__button.css);
+@import url(../blocks/card/__like/card__like.css);
+@import url(../blocks/card/__like/_active/card__like_active.css);
+@import url(../blocks/card/__delete/card__delete.css);
+@import url(../blocks/card/__img-btn/card__img-button.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
