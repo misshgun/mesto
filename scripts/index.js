@@ -79,15 +79,6 @@ addCardForm.addEventListener('submit', function (evt) {
   };
   const cardElement = createCard(element);
   closePopup(popupAdd);
-  cardElement.querySelector('.card__delete').addEventListener('click', function (evt) { //удаление
-    evt.target.closest('.card').remove();
-  });
-  cardElement.querySelector('.card__like').addEventListener('click', function (evt) { //лайк
-    evt.target.classList.toggle('card__like_active');
-  });
-  cardElement.querySelector('.card__img-btn').addEventListener('click', (evt) => {
-    openPopup(popupPhoto);
-  });
   evt.target.reset();
   cardsContainer.prepend(cardElement);
 });
