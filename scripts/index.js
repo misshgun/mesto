@@ -87,13 +87,36 @@ const popupImage = document.querySelector('.popup__window-image');
 const popupPhoto = document.querySelector('.popup_window');
 const photoTitle = document.querySelector('.popup__window-info');
 const text = document.querySelector('.card__title');
+const popupOpened = document.querySelector('.popup_opened');
 
-const openPopup = (popup) => {           //Открытие попапов
+
+const openPopup = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      popup.classList.remove('popup_opened');
+    }
+  
+  });
 }
 
-function closePopup(popup) {             //Закрытие попапов
+const popup = document.querySelectorAll('.popup').forEach(item => {
+  item.addEventListener('click', (evt) => {
+    if(evt.target === evt.currentTarget){
+      closePopup(item);
+    }
+  });
+});
+
+//popup.addEventListener('mousedown', (evt) => {
+ // if(evt.target === evt.currentTarget){
+    //closePopup(popup);
+  //}
+//});
+
+function closePopup(popup) {
   popup.classList.remove('popup_opened');
+
 }
 
 function handleProfileFormSubmit(evt) {
@@ -121,8 +144,10 @@ imagePopupCloseButton.addEventListener('click', () => {
 profileCloseButton.addEventListener('click', () => {
   closePopup(profilePopup);
 });
+
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
 popupCloseAdd.addEventListener('click', () => {
   closePopup(popupAdd);
 });
+
