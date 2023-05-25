@@ -1,5 +1,8 @@
-import Card from "./card.js";
+import Card from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
+import { openPopup } from "./utils.js";
+import { closeByEscape } from "./utils.js";
+import { closePopup } from "./utils.js"
 
 const profilePopup = document.querySelector('.popup_profile');
 const popupAdd = document.querySelector('.popup_add');
@@ -45,7 +48,6 @@ const initialCards = [
 ];
 
 function createCard(item) {
-
   const card = new Card(item.name, item.link, document.querySelector('#template'));
   return card.getElement();
 }
@@ -54,7 +56,6 @@ initialCards.forEach(function (element) {
   const cardElement = createCard(element);
   cardsContainer.append(cardElement);
 });
-
 
 const options = {
   formSelector: '.popup__form',
@@ -67,16 +68,11 @@ const options = {
   inputErrorClass: 'popup__input-error_active'
 }
 
+const validatorEditProfile = new FormValidator(options, formProfile);
+validatorEditProfile.enableValidation();
 
-
-const formFirst = new FormValidator(options, formProfile);
-formFirst.enableValidation();
-formFirst.enableButton();
-// formFirst.
-const formSecond = new FormValidator(options, formCard);
-formSecond.enableValidation();
-
-
+const validatorAddCard = new FormValidator(options, formCard);
+validatorAddCard.enableValidation();
 
 const addCardForm = document.querySelector('#card-form');
 const cardTitle = addCardForm.querySelector('.popup__input_type_title');
@@ -95,27 +91,7 @@ addCardForm.addEventListener('submit', function (evt) {
   cardsContainer.prepend(cardElement);
 });
 
-const popupImage = document.querySelector('.popup__window-image');
 const popupPhoto = document.querySelector('.popup_window');
-const photoTitle = document.querySelector('.popup__window-info');
-const text = document.querySelector('.card__title');
-
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closeByEscape);
-}
-
-export const openPopup = (popup) => {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closeByEscape);
-}
-
-function closeByEscape(evt) {
-  if (evt.key === 'Escape') {
-    const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup);
-  }
-}
 
 const popups = document.querySelectorAll('.popup').forEach(item => {
   item.addEventListener('click', (evt) => {

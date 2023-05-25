@@ -5,7 +5,7 @@ export class FormValidator {
         this._popupButtonSave = this._formElement.querySelector(this._options.submitSelector);
         this._popupInputs = Array.from(this._formElement.querySelectorAll(this._options.inputSelector));
     }
-    
+
     _hideError = (errorBottom, errorElement) => {
         errorElement.textContent = '';
         errorElement.src = '';
@@ -32,7 +32,7 @@ export class FormValidator {
         }
     }
 
-    enableButton = () => {
+    _enableButton = () => {
         this._popupButtonSave.removeAttribute('disabled');
         this._popupButtonSave.classList.remove(this._options.disabledButtonClass);
     }
@@ -45,7 +45,7 @@ export class FormValidator {
     _toggleButtonState = () => {
         const formInValid = this._popupInputs.every(inputElement => inputElement.validity.valid);
         if (formInValid) {
-            this.enableButton();
+            this._enableButton();
         } else {
             this._disableButton();
         }
@@ -68,10 +68,5 @@ export class FormValidator {
 
     enableValidation = () => {
         this._setEventListeners();
-        // this._enableButton();
     }
 }
-// const forms = Array.from(document.querySelectorAll(options.formSelector));
-        // forms.forEach(form => {
-        //     setEventListeners(form, options);
-        // });
